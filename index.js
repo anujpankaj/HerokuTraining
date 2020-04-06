@@ -18,9 +18,13 @@ app.get('/cool', (req, res) => res.send(cool()))
 app.get('/times', (req,res) => res.send(showTime()))
 //Fetch data from database
 app.get('/db', (req, res , next) => {     
-       Testtable.findAll()
+       Testtable.findAll({
+          attributes : ['id', 'name'],
+       })
        .then(results =>{
-        res.render('/pages/db', results);
+        res.render('pages/db', {
+          results: results
+        });
        })
        .catch(err =>{
          console.error(err);

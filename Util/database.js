@@ -5,7 +5,10 @@ const sequelize = new Sequelize('df633qg2s15gvn', 'lwrucnljmypemu', '9e300f865b1
     dialect: 'postgres',
     port: '5432',
     dialectOptions: {
-        ssl: true,
+        ssl: {
+            require: true,           
+            rejectUnauthorized: false,
+          },      
     },
     pool: {
         max: 9,

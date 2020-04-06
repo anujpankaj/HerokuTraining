@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const sequelizedb = require('../Util/database');
-const testtable = sequelizedb.define('testtables', {
+const testtable = sequelizedb.define('test_table', {
     id : {
             type : Sequelize.INTEGER,
             primaryKey : true
